@@ -13,12 +13,11 @@ public class Version {
 			if(nums.length > 1) major = Integer.parseInt(nums[1]);
 			else major = 0;
 			
-			String min;
-			if(nums.length > 2) min = nums[2];
-			else min = "";
+			if(nums.length > 2) minor = Integer.parseInt(nums[2]);
+			else minor = 0;
 			
 		} catch(NumberFormatException ex) {
-			if(Game.debug) System.err.println("INVALID version number: \"" + version + "\"");
+			if(Game.debug) System.err.println("Invalid version number: " + version);
 			return;
 		} catch(Exception ex) {
 			if(Game.debug) ex.printStackTrace();
