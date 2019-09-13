@@ -15,14 +15,18 @@ public class Initializer {
 				break;
 			}
 		}
+		
+		if (Game.debug) System.out.println("Parsed arguments");
 	}
 
 	public static void init() {
-		if (Game.debug)
-			System.out.println("Initializing");
+		if (Game.debug) System.out.println("Initializing");
+		
+		// Init time
+		Time.init();
 
 		// Create a window
 		MainGameLoop.window = new Window(Game.WIDTH, Game.HEIGHT, Game.TITLE);
-		MainGameLoop.window.create();
+		
 	}
 }

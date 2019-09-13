@@ -2,6 +2,7 @@ package core.io;
 
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWVidMode;
+import org.lwjgl.opengl.GL;
 
 import core.Game;
 
@@ -16,9 +17,11 @@ public class Window {
 		this.width = width;
 		this.height = height;
 		this.title = title;
+		
+		create();
 	}
 	
-	public void create() {
+	private void create() {
 		if(!GLFW.glfwInit()) {
 			System.err.println("ERROR: Could not initialize GLFW");
 			GLFW.glfwTerminate();
@@ -36,14 +39,14 @@ public class Window {
 		GLFWVidMode videoMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
 		GLFW.glfwSetWindowPos(window, (videoMode.width() - width) / 2, (videoMode.height() - height) / 2);
 		
+		GLFW.glfwMakeContextCurrent(window);
+		GL.createCapabilities();
+		
 		GLFW.glfwShowWindow(window);
 	}
 	
 	public void update() {
 		GLFW.glfwPollEvents();
-	}
-	
-	public void swapBuffers() {
 		GLFW.glfwSwapBuffers(window);
 	}
 	
@@ -52,6 +55,7 @@ public class Window {
 	}
 	
 	public void terminate() {
+		GLFW.glfwDestroyWindow(window);
 		GLFW.glfwTerminate();
 		
 		if (Game.debug) System.out.println("Terminated window");

@@ -1,10 +1,10 @@
 package core;
 
-public class Version {
+public class GameVersion {
 	
 	private int make, major, minor;
 	
-	public Version(String version) {
+	public GameVersion(String version) {
 		String[] nums = version.split("\\.");
 		try {
 			if(nums.length > 0) make = Integer.parseInt(nums[0]);
