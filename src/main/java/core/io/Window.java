@@ -17,11 +17,9 @@ public class Window {
 		this.width = width;
 		this.height = height;
 		this.title = title;
-		
-		create();
 	}
 	
-	private void create() {
+	public void create() {
 		if(!GLFW.glfwInit()) {
 			System.err.println("ERROR: Could not initialize GLFW");
 			GLFW.glfwTerminate();

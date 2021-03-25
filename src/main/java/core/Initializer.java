@@ -1,18 +1,15 @@
 package core;
 
-import core.io.Window;
+import static core.Game.GAMETHREAD;
 
 public class Initializer {
 
 	public static void parseArgs(String[] args) {
 		for (String arg : args) {
 			switch (arg) {
-			case "-debug":
-				Game.debug = true;
-				break;
-
-			default:
-				break;
+				case "-debug" -> {
+					Game.debug = true;
+				}
 			}
 		}
 		
@@ -25,8 +22,6 @@ public class Initializer {
 		// Init time
 		Time.init();
 
-		// Create a window
-		MainGameLoop.window = new Window(Game.WIDTH, Game.HEIGHT, Game.TITLE);
-		
+		GAMETHREAD.setName("Game Thread");
 	}
 }

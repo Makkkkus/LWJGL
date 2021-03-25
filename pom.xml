@@ -6,7 +6,10 @@
 	<name>LWJGL</name>
 	
 	<properties>
-		<lwjgl.version>3.2.2</lwjgl.version>
+		<lwjgl.version>3.2.3</lwjgl.version>
+		<maven.compiler.target>1.14</maven.compiler.target>
+		<maven.compiler.source>1.14</maven.compiler.source>
+		<maven.compiler.release>1.14</maven.compiler.release>
 	</properties>
 
 	<profiles>
