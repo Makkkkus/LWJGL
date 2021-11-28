@@ -7,9 +7,9 @@ public class Initializer {
 	public static void parseArgs(String[] args) {
 		for (String arg : args) {
 			switch (arg) {
-				case "-debug" -> {
+				case "-debug":
 					Game.debug = true;
-				}
+					break;
 			}
 		}
 		

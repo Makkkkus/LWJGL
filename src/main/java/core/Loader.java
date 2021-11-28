@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Loader {
 
-	private final ArrayList<Integer> VAOS = new ArrayList<Integer>();
-	private final ArrayList<Integer> VBOS = new ArrayList<Integer>();
+	private final ArrayList<Integer> VAOS = new ArrayList<>();
+	private final ArrayList<Integer> VBOS = new ArrayList<>();
 
 	/**
 	 * Load data to a VAO.

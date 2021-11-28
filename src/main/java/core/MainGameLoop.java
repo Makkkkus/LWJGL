@@ -15,7 +15,7 @@ public class MainGameLoop implements Runnable {
 	};
 
 	public void run() {
-		if (Game.debug) System.out.println("Started loop");
+		//Logger.debug("Started loop");
 
 		// Create a window
 		window = new Window(Game.WIDTH, Game.HEIGHT, Game.TITLE);
